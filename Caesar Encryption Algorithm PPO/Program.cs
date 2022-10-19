@@ -14,7 +14,7 @@ char[] Encrypt(char[] text, int key)
         }
         else
         {
-            if (GetIndex(alphabet, notCodedElement) + key  <= 25)
+            if (indexOfNotCodedElement + key  <= 25)
             {
                 encryptedText[i] = alphabet[key + indexOfNotCodedElement];
             }
@@ -61,6 +61,12 @@ while (true)
     var userInput = Console.ReadLine()!.ToCharArray();
     Console.WriteLine("Enter key:");
     var key = Console.ReadLine();
-    var encrypted = Encrypt(userInput, int.Parse(key));
+    var encrypted = Encrypt(userInput, int.Parse(key!));
     Print(encrypted);
+    Console.WriteLine("Continue? [yes/no]");
+    var end = Console.ReadLine();
+    if (end?.ToLower() == "no")
+    {
+        break;
+    }
 }
