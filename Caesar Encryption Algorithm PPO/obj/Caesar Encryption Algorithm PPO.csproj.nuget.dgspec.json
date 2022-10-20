@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\Caesar Encryption Algorithm PPO\\Caesar Encryption Algorithm PPO\\Caesar Encryption Algorithm PPO.csproj": {}
+    "/Users/qualiaaa/RiderProjects/Caesar-Encryption-Algorithm-PP/Caesar Encryption Algorithm PPO/Caesar Encryption Algorithm PPO.csproj": {}
   },
   "projects": {
-    "D:\\C#\\Caesar Encryption Algorithm PPO\\Caesar Encryption Algorithm PPO\\Caesar Encryption Algorithm PPO.csproj": {
+    "/Users/qualiaaa/RiderProjects/Caesar-Encryption-Algorithm-PP/Caesar Encryption Algorithm PPO/Caesar Encryption Algorithm PPO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\Caesar Encryption Algorithm PPO\\Caesar Encryption Algorithm PPO\\Caesar Encryption Algorithm PPO.csproj",
+        "projectUniqueName": "/Users/qualiaaa/RiderProjects/Caesar-Encryption-Algorithm-PP/Caesar Encryption Algorithm PPO/Caesar Encryption Algorithm PPO.csproj",
         "projectName": "Caesar Encryption Algorithm PPO",
-        "projectPath": "D:\\C#\\Caesar Encryption Algorithm PPO\\Caesar Encryption Algorithm PPO\\Caesar Encryption Algorithm PPO.csproj",
-        "packagesPath": "C:\\Users\\areog\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\Caesar Encryption Algorithm PPO\\Caesar Encryption Algorithm PPO\\obj\\",
+        "projectPath": "/Users/qualiaaa/RiderProjects/Caesar-Encryption-Algorithm-PP/Caesar Encryption Algorithm PPO/Caesar Encryption Algorithm PPO.csproj",
+        "packagesPath": "/Users/qualiaaa/.nuget/packages/",
+        "outputPath": "/Users/qualiaaa/RiderProjects/Caesar-Encryption-Algorithm-PP/Caesar Encryption Algorithm PPO/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\areog\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/qualiaaa/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/qualiaaa/.dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }

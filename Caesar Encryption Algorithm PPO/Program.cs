@@ -6,7 +6,7 @@ char[] Encrypt(char[] text, int key)
     for (int i = 0; i < text.Length; i++)
     {
         var notCodedElement = char.Parse(text[i].ToString().ToUpper());
-        var indexOfNotCodedElement = GetIndex(alphabet, notCodedElement);
+        var indexOfNotCodedElement = GetIndex(notCodedElement);
         
         if (IsPunctuation(text[i]))
         {
@@ -24,15 +24,43 @@ char[] Encrypt(char[] text, int key)
             }
         }
     }
-    
+    encryptedText = CheckCases(text, encryptedText);
     return encryptedText;
 }
 
-int GetIndex(char[] array, char element)
+char[] Decrypt(char[] encryptedText, int key)
 {
-    for (int i = 0; i < array.Length; i++)
+    char[] decrypted = new char[encryptedText.Length];
+    for (int i = 0; i < encryptedText.Length; i++)
     {
-        if (array[i] == element)
+        var notDecodedElement = char.Parse(encryptedText[i].ToString().ToUpper());
+        var indexOfCodedElement = GetIndex(notDecodedElement);
+        if (IsPunctuation(notDecodedElement))
+        {
+            decrypted[i] = encryptedText[i];
+        }
+
+        else
+        {
+            if (indexOfCodedElement - key >= 0)
+            {
+                decrypted[i] = alphabet[indexOfCodedElement - key];
+            }
+            else
+            {
+                decrypted[i] = alphabet[(indexOfCodedElement - key) % 25];
+            }
+        }
+    }
+    decrypted = CheckCases(encryptedText, decrypted);
+    return decrypted;
+}
+
+int GetIndex(char element)
+{
+    for (int i = 0; i < alphabet.Length; i++)
+    {
+        if (alphabet[i] == element)
         {
             return i;
         }
@@ -43,7 +71,7 @@ int GetIndex(char[] array, char element)
 
 bool IsPunctuation(char element)
 {
-    return element is ' ' or ',' or ';' or '-' or '.';
+    return element is ' ' or ',' or ';' or '-' or '.' or '!' or '?' or ':' or '"';
 }
 
 void Print(char[] array)
@@ -55,6 +83,18 @@ void Print(char[] array)
     Console.WriteLine();
 }
 
+char[] CheckCases(char[] userInput, char[] encrypted)
+{
+    for (int i = 0; i < userInput.Length; i++)
+    {
+        if (char.IsLower(userInput[i]))
+        {
+            encrypted[i] = char.Parse(encrypted[i].ToString().ToLower());
+        }
+    }
+    return encrypted;
+}
+
 while (true)
 {
     Console.WriteLine("Enter text:");
@@ -62,7 +102,9 @@ while (true)
     Console.WriteLine("Enter key:");
     var key = Console.ReadLine();
     var encrypted = Encrypt(userInput, int.Parse(key!));
+    var decrypted = Decrypt(encrypted, int.Parse(key!));
     Print(encrypted);
+    Print(decrypted);
     Console.WriteLine("Continue? [yes/no]");
     var end = Console.ReadLine();
     if (end?.ToLower() == "no")
