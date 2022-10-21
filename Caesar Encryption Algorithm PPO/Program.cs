@@ -20,7 +20,7 @@ char[] Encrypt(char[] text, int key)
             }
             else
             {
-                encryptedText[i] = alphabet[(key + indexOfNotCodedElement) % 25];
+                encryptedText[i] = _alphabet[(key + indexOfNotCodedElement) % 26];
             }
         }
     }
@@ -48,7 +48,7 @@ char[] Decrypt(char[] encryptedText, int key)
             }
             else
             {
-                decrypted[i] = alphabet[(indexOfCodedElement - key) % 25];
+                decrypted[i] = _alphabet[26 + (indexOfCodedElement - key) % 26];
             }
         }
     }
